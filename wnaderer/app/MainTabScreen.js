@@ -8,8 +8,10 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import homeScreen from "./HomeScreen";
 import ProfileScreen from "./ProfileScreen";
 import ExploreScreen from "./ExploreScreen";
+import Location from "./Location";
 import Bookmark from "./Bookmark";
 import Notification from "./Notifications";
+import Guide from "./Guide";
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -43,10 +45,10 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Profile"
-      component={ProfileScreen}
+      component={Guide}
       options={{
-        tabBarLabel: "Profile",
-        tabBarColor: "green",
+        tabBarLabel: "Guide",
+        tabBarColor: "brown",
 
         tabBarIcon: ({ color }) => (
           <Icon name="ios-person" color={color} size={26} />
@@ -55,23 +57,14 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Explore"
-      component={ExploreScreen}
+      component={Location}
       options={{
         tabBarLabel: "Explore",
-        tabBarColor: "blue",
+        tabBarColor: "grey",
 
         tabBarIcon: ({ color }) => (
           <Icon name="search-outline" color={color} size={26} />
         ),
-      }}
-    />
-    <Tab.Screen
-      name="Bookmark"
-      component={BookmarkStackScreen}
-      options={{
-        tabBarLabel: "Bookmark",
-        tabBarColor: "grey",
-        tabBarIcon: ({ color }) => <Icon name="book" color={color} size={26} />,
       }}
     />
   </Tab.Navigator>
@@ -103,7 +96,7 @@ const HomeStackScreen = ({ navigation }) => (
             onPress={() => {
               navigation.openDrawer();
             }}
-          ></Icon.Button>
+          />
         ),
       }}
     />
@@ -135,7 +128,7 @@ const DetailStackScreen = ({ navigation }) => (
             onPress={() => {
               navigation.openDrawer();
             }}
-          ></Icon.Button>
+          />
         ),
       }}
     />
@@ -166,7 +159,7 @@ const BookmarkStackScreen = ({ navigation }) => (
             onPress={() => {
               navigation.openDrawer();
             }}
-          ></Icon.Button>
+          />
         ),
       }}
     />

@@ -20,7 +20,7 @@ const DetailsScreenMur = ({ navigation }) => {
         }}
       >
         <View style={{ width: "30%", paddingLeft: 20 }}>
-          <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image
               source={require("../images/17.png")}
               style={{ marginVertical: 40 }}
@@ -82,10 +82,12 @@ const DetailsScreenMur = ({ navigation }) => {
               marginTop: 50,
             }}
           >
-            <Image
-              style={{ width: 40, height: 40, tintColor: "teal" }}
-              source={require("../images/tour.png")}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate("Location")}>
+              <Image
+                style={{ width: 40, height: 40, tintColor: "teal" }}
+                source={require("../images/tour.png")}
+              />
+            </TouchableOpacity>
           </Animatable.View>
           <Animatable.View
             animation="fadeInLeft"

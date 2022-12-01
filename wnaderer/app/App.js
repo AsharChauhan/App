@@ -24,6 +24,10 @@ import HotelsLahore from "./DetailScreens/VerticalComponents/HotelsLahore";
 import HotelsKar from "./DetailScreens/VerticalComponents/HotelsKar";
 import HotelsMur from "./DetailScreens/VerticalComponents/HotelsMur";
 import Products from "./DetailScreens/VerticalComponents/Products";
+import RentalProducts from "./DetailScreens/VerticalComponents/RentalProducts";
+import ExploreScreen from "./ExploreScreen";
+import Location from "./Location";
+
 import R1p1 from "./DetailScreens/InnerProducts/R1p1";
 import R1p2 from "./DetailScreens/InnerProducts/R1p2";
 import R2p1 from "./DetailScreens/InnerProducts/R2p1";
@@ -168,6 +172,8 @@ export default function App() {
               component={DetailsScreenMul}
             />
             <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+            <Drawer.Screen name="ExploreScreen" component={ExploreScreen} />
+            <Drawer.Screen name="Location" component={Location} />
 
             <Drawer.Screen name="Guide" component={Guide} />
             <Drawer.Screen name="HotelsIsl" component={HotelsIsl} />
@@ -175,6 +181,7 @@ export default function App() {
             <Drawer.Screen name="HotelsKar" component={HotelsKar} />
             <Drawer.Screen name="HotelsMur" component={HotelsMur} />
             <Drawer.Screen name="Products" component={Products} />
+            <Drawer.Screen name="RentalProducts" component={RentalProducts} />
 
             <Drawer.Screen name="R1p1" component={R1p1} />
             <Drawer.Screen name="R1p2" component={R1p2} />

@@ -115,7 +115,7 @@ const SignIn = ({ navigation }) => {
                 width: 200,
                 height: 200,
               }}
-              source={require("./images/login.png")}
+              source={require("./images/loginpage.png")}
             />
           </Animatable.View>
         </View>
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     marginTop: 70,
   },
   footer: {
-    flex: 3,
+    height: 550,
     backgroundColor: "white",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,

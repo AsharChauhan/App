@@ -30,7 +30,8 @@ export function DrawerContent(props) {
             <View style={{ flexDirection: "row", marginTop: 15 }}>
               <Avatar.Image
                 source={{
-                  uri: "https://secure.gravatar.com/avatar/379c085d096680aec5f3eb733a942847",
+                  uri:
+                    "https://secure.gravatar.com/avatar/379c085d096680aec5f3eb733a942847",
                 }}
               />
               <View style={{ flexDirection: "column", marginLeft: 15 }}>
@@ -78,7 +79,7 @@ export function DrawerContent(props) {
               icon={({ color, size }) => (
                 <Icon name="person" color={color} size={size} />
               )}
-              label="Profile"
+              label="Guide!"
               onPress={() => {
                 props.navigation.navigate("Profile");
               }}
@@ -86,11 +87,11 @@ export function DrawerContent(props) {
 
             <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="settings" color={color} size={size} />
+                <Icon name="explore" color={color} size={size} />
               )}
-              label="Settings"
+              label="Explore Hotels"
               onPress={() => {
-                props.navigation.navigate("Settings");
+                props.navigation.navigate("ExploreScreen");
               }}
             />
           </Drawer.Section>

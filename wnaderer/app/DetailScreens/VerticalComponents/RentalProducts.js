@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, ImageBackground } from "react-native";
+import { View, Text, Image, ImageBackground, br } from "react-native";
 import {
   TextInput,
   ScrollView,
@@ -9,7 +9,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
 
-const Products = ({ navigation }) => {
+const RentalProducts = ({ navigation }) => {
   return (
     <ScrollView>
       <View
@@ -21,14 +21,14 @@ const Products = ({ navigation }) => {
       >
         <View
           style={{
-            backgroundColor: "#292929",
+            backgroundColor: "#00a46c",
             height: "18%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20,
           }}
         >
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.navigate("Products")}>
             <Image
               source={require("../../images/17.png")}
               style={{ marginTop: 40, width: 20, tintColor: "white" }}
@@ -57,10 +57,26 @@ const Products = ({ navigation }) => {
                   marginTop: -50,
                 }}
               >
-                Get ready for your trip.{" "}
+                Rent It, {"\n"}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 28,
+                  color: "black",
+                  fontWeight: "bold",
+                  marginLeft: 30,
+                  marginTop: -30,
+                }}
+              >
+                Save It.{" "}
               </Text>
             </Animatable.View>
-            <View style={{ width: "50%", alignItems: "flex-end" }}>
+            <View
+              style={{
+                width: "50%",
+                alignItems: "flex-end",
+              }}
+            >
               <Image
                 source={require("../../images/w2.jpg")}
                 style={{
@@ -76,7 +92,7 @@ const Products = ({ navigation }) => {
         </View>
         <Animatable.View animation="fadeIn" duration={1000}>
           <LinearGradient
-            colors={["#292929", "transparent"]}
+            colors={["#00a46c", "transparent"]}
             style={{
               left: 0,
               right: 0,
@@ -127,17 +143,15 @@ const Products = ({ navigation }) => {
           <View style={{ width: "50%", alignItems: "flex-end" }}>
             <View
               style={{
-                backgroundColor: "#00a46c",
+                backgroundColor: "#292929",
                 paddingHorizontal: 20,
                 paddingVertical: 5,
                 borderRadius: 15,
-                marginRight: 30,
-                marginTop: 30,
+                marginRight: 60,
+                marginTop: 10,
               }}
             >
-              <TouchableOpacity
-                onPress={() => navigation.navigate("RentalProducts")}
-              >
+              <TouchableOpacity onPress={() => navigation.navigate("Products")}>
                 <Text
                   style={{
                     fontWeight: "bold",
@@ -145,7 +159,7 @@ const Products = ({ navigation }) => {
                     color: "#FFF",
                   }}
                 >
-                  Rent Used Product
+                  New Products
                 </Text>
               </TouchableOpacity>
             </View>
@@ -186,7 +200,7 @@ const Products = ({ navigation }) => {
             style={{ height: 400, width: "100%" }}
           >
             <LinearGradient
-              colors={["#B5B5B5", "transparent"]}
+              colors={["#C6DDC0", "transparent"]}
               style={{
                 position: "absolute",
                 left: 0,
@@ -210,8 +224,13 @@ const Products = ({ navigation }) => {
               }}
             >
               <Image
-                style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/bag1.png")}
+                style={{
+                  height: 180,
+                  width: 130,
+                  marginLeft: 20,
+                  overflow: "hidden",
+                }}
+                source={require("../../images/rbag3.png")}
               />
               <View
                 style={{
@@ -225,7 +244,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Monark{" "}
+                  Blue Bag{" "}
                 </Text>
                 <Text
                   style={{
@@ -234,7 +253,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 50,
                   }}
                 >
-                  $40
+                  $4
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -242,7 +264,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4* (10)
@@ -264,7 +286,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/bag2.png")}
+                source={require("../../images/rbag2.png")}
               />
               <View
                 style={{
@@ -278,7 +300,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Nike Bagpack{" "}
+                  Stylx Bagpack{" "}
                 </Text>
                 <Text
                   style={{
@@ -287,7 +309,11 @@ const Products = ({ navigation }) => {
                     paddingLeft: 20,
                   }}
                 >
-                  $70
+                  $2
+                </Text>
+
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -295,7 +321,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.5 (12){" "}
@@ -316,7 +342,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/bag3.png")}
+                source={require("../../images/rbag4.png")}
               />
               <View
                 style={{
@@ -330,7 +356,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Leather{" "}
+                  Big Bag{" "}
                 </Text>
                 <Text
                   style={{
@@ -339,7 +365,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 50,
                   }}
                 >
-                  $40
+                  $4
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -347,7 +376,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4* (5){" "}
@@ -369,7 +398,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/bag4.png")}
+                source={require("../../images/rbag1.png")}
               />
               <View
                 style={{
@@ -392,7 +421,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 55,
                   }}
                 >
-                  $20
+                  $2
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -400,7 +432,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 3.5* (10){" "}
@@ -444,7 +476,7 @@ const Products = ({ navigation }) => {
             style={{ height: 400, width: "100%" }}
           >
             <LinearGradient
-              colors={["#B5B5B5", "transparent"]}
+              colors={["#C6DDC0", "transparent"]}
               style={{
                 position: "absolute",
                 left: 0,
@@ -469,7 +501,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/jacket1.png")}
+                source={require("../../images/rjack1.png")}
               />
               <View
                 style={{
@@ -492,7 +524,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 40,
                   }}
                 >
-                  $100
+                  $6
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -500,7 +535,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.8* (7)
@@ -522,7 +557,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/jacket4.png")}
+                source={require("../../images/rjack2.png")}
               />
               <View
                 style={{
@@ -536,16 +571,19 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Denim{" "}
+                  Red Hood{" "}
                 </Text>
                 <Text
                   style={{
                     fontWeight: "bold",
                     color: "#00a46c",
-                    paddingLeft: 65,
+                    paddingLeft: 45,
                   }}
                 >
-                  $60
+                  $6
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -553,7 +591,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.2* (3){" "}
@@ -574,7 +612,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/jacket3.png")}
+                source={require("../../images/rjack3.png")}
               />
               <View
                 style={{
@@ -597,7 +635,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 50,
                   }}
                 >
-                  $150
+                  $4
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -605,7 +646,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.1* (8){" "}
@@ -627,7 +668,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/jacket2.png")}
+                source={require("../../images/rjack4.png")}
               />
               <View
                 style={{
@@ -641,7 +682,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Adidas{" "}
+                  Leather{" "}
                 </Text>
                 <Text
                   style={{
@@ -650,7 +691,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 55,
                   }}
                 >
-                  $120
+                  $6
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -658,7 +702,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.5* (7){" "}
@@ -703,7 +747,7 @@ const Products = ({ navigation }) => {
             style={{ height: 400, width: "100%" }}
           >
             <LinearGradient
-              colors={["#B5B5B5", "transparent"]}
+              colors={["#C6DDC0", "transparent"]}
               style={{
                 position: "absolute",
                 left: 0,
@@ -728,7 +772,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/shoes1.png")}
+                source={require("../../images/rs4.png")}
               />
               <View
                 style={{
@@ -751,7 +795,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 50,
                   }}
                 >
-                  $200
+                  $8
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -759,7 +806,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.6* (2)
@@ -780,13 +827,13 @@ const Products = ({ navigation }) => {
               }}
             >
               <Image
-                style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/shoes2.png")}
+                style={{ height: 150, width: 160, overflow: "hidden" }}
+                source={require("../../images/rs2.png")}
               />
               <View
                 style={{
                   flexDirection: "row",
-                  paddingTop: 10,
+                  paddingTop: 40,
                   paddingHorizontal: 10,
                 }}
               >
@@ -804,7 +851,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 60,
                   }}
                 >
-                  $260
+                  $5
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -812,7 +862,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.7* (7){" "}
@@ -833,7 +883,7 @@ const Products = ({ navigation }) => {
             >
               <Image
                 style={{ height: 180, width: 160, overflow: "hidden" }}
-                source={require("../../images/shoes3.png")}
+                source={require("../../images/rs3.png")}
               />
               <View
                 style={{
@@ -847,7 +897,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Nike Go{" "}
+                  PUMA X3{" "}
                 </Text>
                 <Text
                   style={{
@@ -856,7 +906,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 50,
                   }}
                 >
-                  $170
+                  $6
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -864,7 +917,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.2* (8){" "}
@@ -891,7 +944,7 @@ const Products = ({ navigation }) => {
                   width: 160,
                   overflow: "hidden",
                 }}
-                source={require("../../images/shoes4.png")}
+                source={require("../../images/rs1.png")}
               />
               <View
                 style={{
@@ -905,7 +958,7 @@ const Products = ({ navigation }) => {
                     fontWeight: "bold",
                   }}
                 >
-                  Toddler{" "}
+                  Nike Box{" "}
                 </Text>
                 <Text
                   style={{
@@ -914,7 +967,10 @@ const Products = ({ navigation }) => {
                     paddingLeft: 55,
                   }}
                 >
-                  $230
+                  $5
+                </Text>
+                <Text style={{ marginLeft: -30, marginTop: 25, fontSize: 10 }}>
+                  Per Day
                 </Text>
               </View>
               <Text
@@ -922,7 +978,7 @@ const Products = ({ navigation }) => {
                   paddingHorizontal: 10,
                   fontWeight: "bold",
                   color: "#FCBC1D",
-                  paddingTop: 3,
+                  marginTop: -15,
                 }}
               >
                 4.3* (9){" "}
@@ -934,4 +990,4 @@ const Products = ({ navigation }) => {
     </ScrollView>
   );
 };
-export default Products;
+export default RentalProducts;

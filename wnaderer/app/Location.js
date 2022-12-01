@@ -13,9 +13,7 @@ import {
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
-import Icon from "@expo/vector-icons/Ionicons";
-
-import { markers, mapDarkStyle, mapStandardStyle } from "./model/mapData";
+import { markers1, mapDarkStyle, mapStandardStyle } from "./model/mapData1";
 import StarRating from "./components/StarRating";
 
 import { useTheme } from "@react-navigation/native";
@@ -25,14 +23,14 @@ const CARD_HEIGHT = 220;
 const CARD_WIDTH = width * 0.8;
 const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 
-const ExploreScreen = () => {
+const Location = () => {
   const theme = useTheme();
 
   const initialMapState = {
-    markers,
+    markers1,
     categories: [
       {
-        name: "Hotel",
+        name: "Location",
       },
     ],
     region: {
@@ -51,8 +49,8 @@ const ExploreScreen = () => {
   useEffect(() => {
     mapAnimation.addListener(({ value }) => {
       let index = Math.floor(value / CARD_WIDTH + 0.3); // animate 30% away from landing on the next item
-      if (index >= state.markers.length) {
-        index = state.markers.length - 1;
+      if (index >= state.markers1.length) {
+        index = state.markers1.length - 1;
       }
       if (index <= 0) {
         index = 0;
@@ -63,7 +61,7 @@ const ExploreScreen = () => {
       const regionTimeout = setTimeout(() => {
         if (mapIndex !== index) {
           mapIndex = index;
-          const { coordinate } = state.markers[index];
+          const { coordinate } = state.markers1[index];
           _map.current.animateToRegion(
             {
               ...coordinate,
@@ -77,7 +75,7 @@ const ExploreScreen = () => {
     });
   });
 
-  const interpolations = state.markers.map((marker, index) => {
+  const interpolations = state.markers1.map((marker, index) => {
     const inputRange = [
       (index - 1) * CARD_WIDTH,
       index * CARD_WIDTH,
@@ -116,7 +114,7 @@ const ExploreScreen = () => {
         provider={PROVIDER_GOOGLE}
         customMapStyle={theme.dark ? mapDarkStyle : mapStandardStyle}
       >
-        {state.markers.map((marker, index) => {
+        {state.markers1.map((marker, index) => {
           const scaleStyle = {
             transform: [
               {
@@ -148,7 +146,6 @@ const ExploreScreen = () => {
           autoCapitalize="none"
           style={{ flex: 1, padding: 0 }}
         />
-        <Icon name="search-outline" color="grey" size={26} />
       </View>
       <ScrollView
         horizontal
@@ -206,7 +203,7 @@ const ExploreScreen = () => {
           { useNativeDriver: true }
         )}
       >
-        {state.markers.map((marker, index) => (
+        {state.markers1.map((marker, index) => (
           <View style={styles.card} key={index}>
             <Image
               source={marker.image}
@@ -252,7 +249,7 @@ const ExploreScreen = () => {
   );
 };
 
-export default ExploreScreen;
+export default Location;
 
 const styles = StyleSheet.create({
   container: {

@@ -13,6 +13,8 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Animatable from "react-native-animatable";
+import Swiper from "react-native-swiper";
+
 import { StatusBar } from "expo-status-bar";
 import { ScrollView } from "react-native-gesture-handler";
 const Guide = ({ navigation }) => {
@@ -51,36 +53,139 @@ const Guide = ({ navigation }) => {
               autoCapitalize="none"
             />
           </View>
-          <View style={{ borderWidth: 1, borderRadius: 20, marginTop: 10 }}>
-            <View>
-              <Image
-                style={{
-                  width: 85,
-                  height: 85,
-                  borderRadius: 50,
-                  marginTop: 10,
-                  marginLeft: 150,
-                }}
-                source={require("./images/Ahsan.jpg")}
-              />
-              <Text style={styles.errorMsg}> Ahsan Rana </Text>
-              <Text style={{ marginTop: 5, marginLeft: 130, color: "grey" }}>
-                {" "}
-                108 Mughalpura St{" "}
-              </Text>
-              <Text style={{ marginTop: 5, marginLeft: 110, color: "grey" }}>
-                {" "}
-                ahsanrana108@gmail.com{" "}
-              </Text>
+          <Swiper
+            style={StyleSheet.wrapper}
+            dotStyle={{
+              marginTop: -100,
+              width: 15,
+              height: 5,
+              borderRadius: 10,
+              backgroundColor: "grey",
+            }}
+            activeDotColor="grey"
+            activeDotStyle={{
+              marginTop: -100,
+              width: 30,
+              height: 6,
+              borderRadius: 10,
+              backgroundColor: "grey",
+              activeDotColor: "grey",
+            }}
+          >
+            <View
+              style={{
+                borderWidth: 1,
+
+                borderRadius: 20,
+                marginTop: 10,
+              }}
+            >
+              <View>
+                <Image
+                  style={{
+                    width: 85,
+                    height: 85,
+                    borderRadius: 50,
+                    marginTop: 10,
+                    marginLeft: 150,
+                  }}
+                  source={require("./images/Ahsan.jpg")}
+                />
+                <Text style={styles.errorMsg}> Ahsan Rana </Text>
+                <Text style={{ marginTop: 5, marginLeft: 130, color: "grey" }}>
+                  {" "}
+                  108 Mughalpura St{" "}
+                </Text>
+                <Text style={{ marginTop: 5, marginLeft: 110, color: "grey" }}>
+                  {" "}
+                  ahsanrana108@gmail.com{" "}
+                </Text>
+              </View>
+              <View style={styles.button}>
+                <TouchableOpacity style={styles.SignIn}>
+                  <LinearGradient
+                    style={styles.SignIn}
+                    colors={["grey", "teal"]}
+                  >
+                    <Text style={styles.textSign}>Contact</Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={styles.button}>
-              <TouchableOpacity style={styles.SignIn}>
-                <LinearGradient style={styles.SignIn} colors={["grey", "teal"]}>
-                  <Text style={styles.textSign}>Contact</Text>
-                </LinearGradient>
-              </TouchableOpacity>
+            <View
+              style={{
+                borderWidth: 1,
+                borderRadius: 20,
+                marginTop: 10,
+              }}
+            >
+              <View>
+                <Image
+                  style={{
+                    width: 85,
+                    height: 85,
+                    borderRadius: 50,
+                    marginTop: 10,
+                    marginLeft: 150,
+                  }}
+                  source={require("./images/mohsin.webp")}
+                />
+                <Text style={styles.errorMsg}> Mohsin Khalid </Text>
+                <Text style={{ marginTop: 5, marginLeft: 130, color: "grey" }}>
+                  {" "}
+                  108 Mughalpura St{" "}
+                </Text>
+                <Text style={{ marginTop: 5, marginLeft: 110, color: "grey" }}>
+                  {" "}
+                  ahsanrana108@gmail.com{" "}
+                </Text>
+              </View>
+              <View style={styles.button}>
+                <TouchableOpacity style={styles.SignIn}>
+                  <LinearGradient
+                    style={styles.SignIn}
+                    colors={["grey", "teal"]}
+                  >
+                    <Text style={styles.textSign}>Contact</Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
+
+            <View style={{ borderWidth: 1, borderRadius: 20, marginTop: 10 }}>
+              <View>
+                <Image
+                  style={{
+                    width: 85,
+                    height: 85,
+                    borderRadius: 50,
+                    marginTop: 10,
+                    marginLeft: 150,
+                  }}
+                  source={require("./images/ashar.jpg")}
+                />
+                <Text style={styles.errorMsg}> Ashar Chauhan </Text>
+                <Text style={{ marginTop: 5, marginLeft: 130, color: "grey" }}>
+                  {" "}
+                  108 Mughalpura St{" "}
+                </Text>
+                <Text style={{ marginTop: 5, marginLeft: 110, color: "grey" }}>
+                  {" "}
+                  ahsanrana108@gmail.com{" "}
+                </Text>
+              </View>
+              <View style={styles.button}>
+                <TouchableOpacity style={styles.SignIn}>
+                  <LinearGradient
+                    style={styles.SignIn}
+                    colors={["grey", "teal"]}
+                  >
+                    <Text style={styles.textSign}>Contact</Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Swiper>
         </Animatable.View>
       </LinearGradient>
     </ScrollView>
@@ -147,7 +252,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   errorMsg: {
-    marginLeft: 147,
+    marginLeft: 140,
     marginTop: 10,
     fontSize: 15,
     fontWeight: "bold",
